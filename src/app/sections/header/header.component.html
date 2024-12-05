@@ -1,0 +1,30 @@
+<div class="header">
+  <div class="logo">
+    <img ngSrc="../../../assets/images/logo.png" alt="Logo" height="37" width="148">
+  </div>
+  <nav class="menu">
+    <a *ngFor="let item of menuItems; let last = last"
+       href="#"
+       [class.selected]="item === selectedItem"
+       (click)="selectItem(item)">
+      {{ item }}
+      <ng-container *ngIf="last">
+        <img src="../../../assets/images/down-icon.png" alt="Icon" class="menu-icon">
+      </ng-container>
+    </a>
+  </nav>
+  <app-button type="primary" (clickEvent)="onContactClick()">Contacto</app-button>
+  <div class="mobile-menu-icon" (click)="toggleMobileMenu()">
+    <svg width="30" height="30" viewBox="0 0 30 30">
+      <path d="M0 5 H30 M0 15 H30 M0 25 H30" stroke="#FFFFFF" />
+    </svg>
+  </div>
+</div>
+<div class="mobile-menu" *ngIf="isMobileMenuOpen">
+  <a *ngFor="let item of menuItems"
+     href="#"
+     [class.selected]="item === selectedItem"
+     (click)="selectItem(item)">
+    {{ item }}
+  </a>
+</div>

@@ -1,0 +1,104 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48px 80px;
+  background-color: #000;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1002;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 24px 16px;
+  }
+}
+
+.logo img {
+  height: 40px;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+  font-size: 16px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  font-weight: 500;
+}
+
+.menu a.selected::after,
+.mobile-menu a.selected::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+}
+
+.mobile-menu-icon {
+  display: none;
+  cursor: pointer;
+  fill: #fff;
+  position: fixed;
+  top: 24px;
+  right: 16px;
+  z-index: 1001;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 80px 16px 16px;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.mobile-menu a {
+  text-align: left;
+  font-size: 24px;
+  color: #fff;
+  position: relative;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .menu, .contact-button, app-button {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) {
+  .header {
+    height: 50px;
+  }
+}
+
+.menu-icon {
+  margin-left: 4px;
+  width: 13px;
+  height: 8px;
+}

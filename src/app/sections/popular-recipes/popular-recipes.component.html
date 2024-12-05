@@ -1,0 +1,12 @@
+<div class="popular-recipes-container">
+  <div class="popular-recipes-header">
+    <h2 class="title">Recetas Peruanas Populares</h2>
+    <a href="#" class="view-more">Explora Todos Los Platos <img ngSrc="./assets/images/right-icon.png" alt="Icono" class="view-more-icon"
+                                                                height="14" width="14"></a>
+  </div>
+  <div class="popular-recipes-carousel">
+    <div class="recipe" *ngFor="let recipe of recipes">
+      <img [src]="recipe.image" alt="{{ recipe.title }}">
+    </div>
+  </div>
+</div>
